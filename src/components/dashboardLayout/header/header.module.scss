@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    align-items: center;
+    gap: 1.183rem;
+    justify-content: space-between;
+    margin-block-start: 1.183rem;
+	margin-block-end: 2rem;
+    margin-inline: 5rem;
+}
+
+.menu:hover path {
+    fill: var(--color-main-primary);
+}
+

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+html, body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--color-main-bg);
+
+  --color-main-bg: #F7F8FA;
+
+  --color-main-b: #111111;
+  --color-main-primary: #4CAF4F;
+  --color-main-secondary: #F4524D;
+
+  --color-banner-success: #016635;
+  --color-banner-warning: #D18C03;
+  --color-banner-info: #72BCE6;
+  --color-banner-error: #CF0000;
+
+  --color-grey-lighter: #EEEEEE;
+  --color-grey-light: #DFDFDF;
+  --color-grey-dark: #999999;
+  --color-grey-darker: #555555;
+  --color-grey-black: #333333;
+
+  --color-card-blue1: #5472D2;
+  --color-card-blue2: #5472D2;
+  --color-card-blue3: #0073AA;
+  --color-card-green1: #D4E9D5;
+  --color-card-green2: #4CAF4F;
+  --color-card-yellow1: #FFB606;
+  --color-card-yellow2: #FFF112;
+
+  --color-header-text: #0E200E;
+  --color-nav-hover-bg: #D3ECDD;
+}
+
+a {
+	text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+}
