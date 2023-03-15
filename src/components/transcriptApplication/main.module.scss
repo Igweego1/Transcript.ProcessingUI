@@ -1,0 +1,31 @@
+.heading {
+    font-size: 2rem;
+    color: var(--color-main-primary);
+    text-transform: uppercase;
+}
+
+h3 {
+    text-transform: uppercase;
+    margin-block-end: 1rem;
+}
+
+.personal, .programme {
+    display: grid;
+    max-width: 100%;
+    gap: 1rem;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
+
+    & div.Wrapper {
+        width: 100%;
+    }
+    & input {
+        width: 100%;
+    }
+
+    @media (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}

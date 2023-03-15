@@ -1,0 +1,58 @@
+.Section{
+    display: flex;
+    flex-direction: column;
+
+    & > label {
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-block-start: 1rem;
+    }
+}
+
+.Wrapper{
+    background-color: #FFFFFF;
+    width: auto;
+    display: flex;
+    gap: 0.813rem;
+    align-items: center;
+    border-radius: 5px;
+    padding-block: 0.813rem;
+}
+
+.Input{
+    background-color: #F2FDF7;
+    border: 1px solid #D3ECDD;
+    border-radius: 4px;
+    //width: 22.5rem;
+    height: 3.5rem;
+    padding-inline: 0.875rem;
+
+    &::placeholder {
+        font-size: 1rem;
+    }
+    &:focus {
+        outline: none;
+    }
+    &:disabled {
+        border: 1px solid #BDBDBD;
+        background-color: #F7F8FA;
+    }
+}
+
+@media (max-width: 540px) {
+    .Section {
+        width: 100%;
+    }
+}
+@media (max-width: 540px) {
+    .Wrapper {
+        width: 100%;
+    }
+}
+
+
+@media screen and (width: 912px) {
+    .Section {
+        width: 100%;
+    }
+}
