@@ -19,7 +19,7 @@ const Sidebar = () => {
 
       <Link className={styles.navLink} to={'/'}><EditIcon/><span>Transcript Requests</span></Link>
 
-      <Link className={styles.navLink} to={'/'}><CommentIcon/><span>Treated Transcripts</span></ Link>
+      <Link className={styles.navLink} to={'/transcript-treated'}><CommentIcon/><span>Treated Transcripts</span></ Link>
 
       <Link className={styles.navLink} to={'/'}><ProfileIcon/><span>Profile</span></ Link>
 
