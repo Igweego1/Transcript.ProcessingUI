@@ -2,7 +2,7 @@ import styles from './main.module.scss';
 
 function Main() {
   return (
-    <h6>Transcript Request</h6>
+    <h1>Transcript Request</h1>
   )
 }
 

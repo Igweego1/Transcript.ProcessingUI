@@ -1,0 +1,21 @@
+.tableHeader {
+    width: 100%;
+    background-color: #FFFFFF;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1.875rem;
+    padding-block: 3.25rem;
+}
+
+h4 {
+    text-transform: uppercase;
+}
+
+.outlinedButton {
+    border: 1px solid #4CAF4F;
+    color: var(--color-grey-black);
+    text-transform: uppercase;
+}
+

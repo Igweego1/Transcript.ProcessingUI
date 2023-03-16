@@ -1,0 +1,45 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.container {
+    display: grid;
+    margin-block-end: 2rem;
+    gap: 1.563rem 0rem;
+}
+
+.textArea{
+    
+    height: 15.625rem;
+    width: 100%;
+    margin-block: 2rem;
+    margin-inline: auto;
+    background-color: #ffff;
+    border: 1px solid #249e57;
+    resize: none;
+    padding: 0.313rem;
+}
+
+.actionButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-block: auto;
+    margin-inline: auto;
+}
+
+.request {
+    border-radius: 4px;
+    color: #249e57;
+    text-transform: uppercase;
+    width: 13rem;
+    height: 3.25rem;
+    background-color: #F2EB1B;
+}
+
+.request :hover{
+    background-color: none;
+}
