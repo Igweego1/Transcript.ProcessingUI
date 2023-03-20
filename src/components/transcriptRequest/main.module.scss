@@ -1,0 +1,21 @@
+.tableHeader {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1.875rem;
+    padding-block: 3.25rem;
+}
+
+.groupedButtons {
+    display: flex;
+    gap: 1rem;
+}
+
+.outlinedButton {
+    border: 1px solid #4CAF4F;
+    color: var(--color-grey-black);
+    text-transform: uppercase;
+    font-weight: 700;
+}
