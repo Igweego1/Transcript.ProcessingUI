@@ -1,4 +1,4 @@
-import { Dialog, DialogContent, DialogTitle, IconButton } from "@mui/material";
+import { Dialog, DialogContent, DialogTitle, IconButton, useMediaQuery, useTheme } from "@mui/material";
 import { ReactComponent as CloseIcon } from '../../svgs/close.svg';
 
 interface ModalProps {
@@ -8,16 +8,21 @@ interface ModalProps {
     open: boolean;
     handleClose: () => void;
     content?: React.ReactNode;
+    includeCloseButton?: boolean;
 }
 
-const CustomModal: React.FC<ModalProps> = ({open, maxWidth, handleClose, content, title, subTitle}) => {
+const CustomModal: React.FC<ModalProps> = ({open, maxWidth, handleClose, content, title, subTitle, includeCloseButton}) => {
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+    
     return (
-        <Dialog open={open} onClose={handleClose} maxWidth={maxWidth ? maxWidth : 'md'} fullWidth>
+        <Dialog open={open} onClose={handleClose} fullScreen={fullScreen}>
             <DialogTitle sx={{paddingInlineStart: '2rem', paddingBlockStart: '2rem', paddingBlockEnd: '', textAlign: 'center'}}>
                 {title}
                 <br/>
                 <span style={{fontWeight: 'normal'}}>{subTitle}</span> 
-                <IconButton
+                {includeCloseButton && (
+                    <IconButton
                     onClick={handleClose}
                     sx={{
                       position: 'absolute',
@@ -27,6 +32,7 @@ const CustomModal: React.FC<ModalProps> = ({open, maxWidth, handleClose, content
                 >
                     <CloseIcon/>
                 </IconButton>
+                )}
             </DialogTitle>
             <DialogContent sx={{paddingInline: {xs: '1rem', sm: '3rem', lg: '5rem'}}}>
                     {content && content}

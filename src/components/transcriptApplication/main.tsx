@@ -1,17 +1,53 @@
 import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
 import {ReactComponent as UploadIcon} from '../../svgs/upload1.svg';
+import {ReactComponent as SuccessIcon} from '../../svgs/success.svg';
 import { Field, FormikProvider, useFormik } from "formik";
 import * as Yup from 'yup';
 import DateInput from "../../custom/date/date";
 import CustomInput from "../../custom/input/input";
 import styles from './main.module.scss';
 import { useState } from "react";
+import CustomModal from "../../custom/modal/modal";
 
 const Main = () => {
     const [file, setFile] = useState<File | null>(null);
 
+    const [openModal, setOpenModal] = useState(false);
+    const handleOpenModal = () => setOpenModal(true);
+    const handleCloseModal = () => setOpenModal(false);
+    
+    const SuccessContent = ({handleClose}: {handleClose: () => void}) => (
+        <div className={styles.successContainer}>
+            <SuccessIcon/>
+            <br/>
+            <label className={styles.submitted}>Submitted</label>
+            <p>
+                Your transcript request has been successfully submitted for processing. 
+                You can check your application status at a later date.
+            </p>
+            <br/>
+            <button className={styles.closeModal} onClick={handleClose}>Great!</button>
+        </div>
+    )
+
     const validationSchema = Yup.object().shape({
-        matricNo: Yup.string().required('required')
+        matricNo: Yup.string().required('required'),
+        firstName: Yup.string().required('required'),
+        middleName: Yup.string().required('required'),
+        lastName: Yup.string().required('required'),
+        phoneNo: Yup.string().required('required'),
+        email: Yup.string().required('required'),
+        programme: Yup.string().required('required'),
+        dateOfGraduation: Yup.string().required('required'),
+        appliedForTranscript: Yup.string().required('required'),
+        office: Yup.string().required('required'),
+        addressLine1: Yup.string().required('required'),
+        addressLine2: Yup.string().required('required'),
+        city: Yup.string().required('required'),
+        postalCode: Yup.string().required('required'),
+        country: Yup.string().required('required'),
+        rrr: Yup.string().required('required'),
+        file: Yup.string().required('required')
     })
     const formik = useFormik({
         initialValues: {
@@ -33,9 +69,10 @@ const Main = () => {
             rrr: '',
             file: ''
         },
-        validationSchema: validationSchema,
+        //validationSchema: validationSchema,
         onSubmit: () => {
-
+            console.log('fef')
+            handleOpenModal()
         }
     })
 
@@ -50,7 +87,7 @@ const Main = () => {
             <FormikProvider value={formik}>
                 <h1 className={styles.heading}>Transcript Application Form</h1>
                 <p>Fill in your matriculation number to proceed</p>
-                <form>
+                <form onSubmit={formik.handleSubmit}>
                     <Field
                         name='matricNo'
                         as={CustomInput}
@@ -203,6 +240,11 @@ const Main = () => {
                     <br/>
                     <button type="submit" className={styles.submit}>Submit</button>
                 </form>
+                <CustomModal 
+                    open={openModal} 
+                    handleClose={handleCloseModal} 
+                    content={<SuccessContent handleClose={handleCloseModal} />}           
+                />
             </FormikProvider>
         </main>
     )
